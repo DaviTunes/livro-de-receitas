@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ScrollView como raiz: ingredientes + passos podem não caber na tela -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetalheReceitaActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="16dp">
+
+        <!-- Cabeçalho: imagem, nome e selos -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imagem_receita"
+                android:layout_width="88dp"
+                android:layout_height="88dp"
+                android:contentDescription="@string/imagem_receita"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/ImagemArredondada"
+                android:src="@drawable/ic_receita_placeholder" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/nome_receita"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="26sp"
+                    android:textStyle="bold"
+                    tools:text="Bolo de Cenoura" />
+
+                <!-- Os selos são inflados pelo código (selo_layout.xml) -->
+                <LinearLayout
+                    android:id="@+id/selos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:orientation="horizontal" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Card de ingredientes -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/card_margin"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/card_background"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/card_padding_horizontal"
+            android:paddingVertical="@dimen/card_padding_vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/titulo_ingredientes"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="@dimen/card_titulo_tamanho" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="8dp" />
+
+            <!-- Uma linha (ingrediente_layout.xml) é adicionada aqui para cada ingrediente -->
+            <LinearLayout
+                android:id="@+id/lista_ingredientes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </LinearLayout>
+
+        <!-- Card de modo de preparo -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/card_margin"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/card_background"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/card_padding_horizontal"
+            android:paddingVertical="@dimen/card_padding_vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="@string/titulo_modo_preparo"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="@dimen/card_titulo_tamanho" />
+
+            <TextView
+                android:id="@+id/modo_preparo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="6dp"
+                android:textSize="15sp"
+                tools:text="1. Bata tudo no liquidificador.\n2. Asse por 40 minutos." />
+        </LinearLayout>
+
+        <!-- Card de dica: a dica é opcional, então começa escondido -->
+        <LinearLayout
+            android:id="@+id/card_dica"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/card_margin"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/card_background"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/card_padding_horizontal"
+            android:paddingVertical="@dimen/card_padding_vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="@string/titulo_dica"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="@dimen/card_titulo_tamanho" />
+
+            <TextView
+                android:id="@+id/dica"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textStyle="italic"
+                tools:text="Use cenouras bem laranjas para uma cor mais bonita." />
+        </LinearLayout>
+
+        <!-- Card de status: o CheckBox é a interação que atualiza a tela -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/card_margin"
+            android:background="@drawable/card_background"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/card_padding_horizontal"
+            android:paddingVertical="@dimen/card_padding_vertical">
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/checkbox_concluida"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/receita_concluida"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/status_receita"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                tools:text="@string/status_pendente" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

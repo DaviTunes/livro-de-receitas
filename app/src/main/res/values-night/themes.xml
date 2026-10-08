@@ -1,0 +1,7 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Prova_parcial_mobile" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/laranja_receita_claro</item>
+        <item name="colorOnPrimary">@color/marrom_escuro</item>
+    </style>
+</resources>

@@ -1,0 +1,14 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Prova_parcial_mobile" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/laranja_receita</item>
+        <item name="colorOnPrimary">@color/white</item>
+    </style>
+
+    <style name="Theme.Prova_parcial_mobile" parent="Base.Theme.Prova_parcial_mobile" />
+
+    <!-- Cantos arredondados das fotos das receitas (ShapeableImageView) -->
+    <style name="ImagemArredondada">
+        <item name="cornerSize">12dp</item>
+    </style>
+</resources>

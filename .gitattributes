@@ -1,0 +1,3 @@
+# Garante que o script do Gradle funcione em Linux/macOS e o .bat no Windows
+gradlew text eol=lf
+*.bat text eol=crlf

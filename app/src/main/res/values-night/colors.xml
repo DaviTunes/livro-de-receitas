@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Versões para o tema escuro (mantém o contraste) -->
+    <color name="card_fundo">#FF2B211B</color>
+    <color name="selo_fundo">#40FFB68A</color>
+    <color name="verde_concluida">#FF81C784</color>
+    <color name="status_pendente">#FFBDBDBD</color>
+</resources>

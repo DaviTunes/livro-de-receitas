@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Livro de Receitas</string>
+    <string name="imagem_receita">Imagem da receita</string>
+    <string name="tempo_preparo">⏱ %1$s</string>
+    <string name="selo_concluida">✓ Concluída</string>
+    <string name="qtd_ingredientes">%1$d ingredientes</string>
+
+    <string name="titulo_ingredientes">Ingredientes</string>
+    <string name="titulo_modo_preparo">Modo de preparo</string>
+    <string name="titulo_dica">💡 Dica</string>
+    <string name="passo_item">%1$d. %2$s</string>
+
+    <string name="receita_concluida">Receita concluída</string>
+    <string name="status_pendente">Você ainda não preparou esta receita.</string>
+    <string name="status_concluida">Mandou bem! Receita preparada. 🎉</string>
+    <string name="receita_nao_encontrada">Receita não encontrada.</string>
+</resources>

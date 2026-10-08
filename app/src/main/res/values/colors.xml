@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Paleta "cozinha" -->
+    <color name="laranja_receita">#FFB4531F</color>
+    <color name="laranja_receita_claro">#FFFFB68A</color>
+    <color name="marrom_escuro">#FF4A1F00</color>
+    <color name="card_fundo">#FFFFF1E8</color>
+    <color name="selo_fundo">#33B4531F</color>
+    <color name="verde_concluida">#FF2E7D32</color>
+    <color name="status_pendente">#FF6D6D6D</color>
+</resources>
